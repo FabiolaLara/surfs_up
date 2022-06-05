@@ -42,6 +42,14 @@ We can say that this way to engine Data Bases is very useful and the commands fo
 
 These SQLite Data Bases are very managable as they are treated as objects. We can query them in many different ways, lets show two additional queries to show data.
 
++ Lets imagine we want to filter the temperature ('tobs') where the ideal temperature are between 70 and 80ºF from June or december, so our code will be like follow:
+
+`results = session.query(Measurement.date,Measurement.tobs).filter(Measurement.tobs >= 70, Measurement.tobs <= 80, extract('month', Measurement.date) ==`    `12).all()`
+
+`df = pd.DataFrame(results,columns = ["date", "tobs"])`
+
+`print(df)`
+
 
 
 Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
