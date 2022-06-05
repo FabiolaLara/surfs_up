@@ -66,6 +66,7 @@ These SQLite Data Bases are very managable as they are treated as objects. We ca
 + So, the Next code shows the date with a specific station wich could be fitted for people who want a station belonging to the third quartil observed in the stats values (75%	74.000000).
 
 `results = session.query(Measurement.date,Measurement.station,Measurement.tobs).filter(Measurement.tobs >= 70, Measurement.tobs <= 80, extract('month',` `Measurement.date) == 12,  Measurement.station == 'USC00519397').all()`
+
 `df = pd.DataFrame(results,columns = ["date", 'Station','tobs'])`
  
  ![tobs_70_80_2](/Resources/filtering.png)
