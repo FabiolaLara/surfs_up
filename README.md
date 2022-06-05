@@ -36,4 +36,12 @@ Mentioning three of the major important point in these analysis deliverables:
 - To convert into a Data Frame
   + import pandas as pd
 
-Summary: Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
+# Summary:
+
+We can say that this way to engine Data Bases is very useful and the commands for this are no so difficult at all, but also this way to be into python environment and running the code in each line and not to be selecting a piece of a snippet code and running like in PgAdmin for example makes to retrieve data easier and faster. 
+
+These SQLite Data Bases are very managable as they are treated as objects. We can query them in many different ways, lets show two additional queries to show data.
+
+
+
+Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
