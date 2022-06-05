@@ -50,6 +50,9 @@ These SQLite Data Bases are very managable as they are treated as objects. We ca
 
 `print(df)`
 
+![tobs_70_80](/Resources/temp_dec_70_80.png)
+
+
 + Another way to present this code will be like this, we can see that, this way is most similar to the one used in PgAdmin:
 
 `data = engine.execute("SELECT date, station, tobs FROM Measurement WHERE tobs >= 70;")`
@@ -65,6 +68,8 @@ These SQLite Data Bases are very managable as they are treated as objects. We ca
 `results = session.query(Measurement.date,Measurement.station,Measurement.tobs).filter(Measurement.tobs >= 70, Measurement.tobs <= 80, extract('month',` `Measurement.date) == 12,  Measurement.station == 'USC00519397').all()`
 `df = pd.DataFrame(results,columns = ["date", 'Station','tobs'])`
  
+ ![tobs_70_80_2](/Resources/filtering.png)
+
  We can observe that we coul code straight as much as we want, or use the `engine.execute` to filter more like pgAdmin.
  
  
