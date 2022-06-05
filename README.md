@@ -50,6 +50,21 @@ These SQLite Data Bases are very managable as they are treated as objects. We ca
 
 `print(df)`
 
++ Another way to present this code will be like this, we can see that, this way is most similar to the one used in PgAdmin:
 
+`data = engine.execute("SELECT date, station, tobs FROM Measurement WHERE tobs >= 70;")`
 
-Provide a high-level summary of the results and two additional queries that you would perform to gather more weather data for June and December.
+`for record in data:`
+   
+   `print(record)`
+
++ We can do the same for the month of june, just changing the mont to 6 `( == 6)`
+
++ So, the Next code shows the date with a specific station wich could be fitted for people who want a station belonging to the third quartil observed in the stats values (75%	74.000000).
+
+`results = session.query(Measurement.date,Measurement.station,Measurement.tobs).filter(Measurement.tobs >= 70, Measurement.tobs <= 80, extract('month',` `Measurement.date) == 12,  Measurement.station == 'USC00519397').all()`
+`df = pd.DataFrame(results,columns = ["date", 'Station','tobs'])`
+ 
+ We can observe that we coul code straight as much as we want, or use the `engine.execute` to filter more like pgAdmin.
+ 
+ 
